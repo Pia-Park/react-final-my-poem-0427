@@ -5,6 +5,10 @@ import App from './App';
 import { store } from './app/store';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
+import { applyMiddleware, createStore } from 'redux';
+import logger from 'redux-logger';
+import { HashRouter as Router} from 'react-router-dom'
+
 
 ReactDOM.render(
   <React.StrictMode>

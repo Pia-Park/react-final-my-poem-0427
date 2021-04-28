@@ -24,7 +24,7 @@ const rootReducer = (state = initState, action) => {
                 
         default:
             return{
-                ...state
+                state
             }
     }
 }

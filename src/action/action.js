@@ -21,3 +21,33 @@ export const getPoemListFailure = (error) => ({
     type: GET_POEM_LIST_FAILURE,
     error
 })
+
+export const addNewPoemPending = () => ({
+    type: ADD_NEW_POEM_PENDING
+})
+
+export const addNewPoemSuccess = (newPoem) => ({
+    type: ADD_NEW_POEM_SUCCESS,
+    payload: newPoem
+})
+
+export const addNewPoemFailure = (error) => ({
+    type: ADD_NEW_POEM_FAILURE,
+    error
+})
+
+
+
+export const deletePoemPending = () => ({
+    type: DELETE_NEW_POEM_PENDING
+})
+
+export const deletePoemSuccess = () => ({
+    type: DELETE_NEW_POEM_SUCCESS,
+})
+
+export const deletePoemFailure = (error) => ({
+    type: DELETE_NEW_POEM_FAILURE,
+    error
+})
+

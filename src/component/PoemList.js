@@ -39,7 +39,8 @@ const PoemList = props => {
                 </div>
             )}
             <ul>
-                {!hasPoem && (
+                {/* <p>{Object.keys(poemList).map(item => (<div>{item.content}</div>))}</p> */}
+                {/* {!hasPoem && (
                     <li className="poem-list">
                         <div className="no-poem">
                             <h2 className="title">
@@ -50,7 +51,7 @@ const PoemList = props => {
                             </p>
                         </div>
                     </li>
-                )}
+                )} */}
                 {/* {poemList.map((poem) => (
                     <li key={poem.id}>
                         <Link to={`/poems/${poem.id}`}>
@@ -63,7 +64,7 @@ const PoemList = props => {
                         <button
                             type="button"
                             className="btn-delete"
-                            onClick={() => onPoemDelete(poem.i)}
+                            onClick={() => onPoemDelete(poem.id)}
                         >
                             <FontAwesomeIcon icon={faTimes} />
                             <span className="delete-text">delete</span>

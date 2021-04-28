@@ -19,7 +19,7 @@ const loadReducer = (state = initState, action) => {
             return{
                 isLoading: false,
                 isError: true,
-                poemList: action.payload
+                poemList: state.poemList
             }
                 
         default:

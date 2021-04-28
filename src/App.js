@@ -90,8 +90,8 @@ class App extends React.Component {
             <Route
               exact path="/poems/:poemId"
               render={routerProps => {
-                const poemId = routerProps.match.params.poemId;
-                const targetPoem = poemList.find(poem => poem.id === poemId);
+                // const poemId = routerProps.match.params.poemId;
+                // const targetPoem = poemList.find(poem => poem.id === poemId);
  
                 return (
                   <PoemDetail

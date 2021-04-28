@@ -15,6 +15,16 @@ const PoemList = props => {
     // })
     // console.log(currentList);
 
+    function getList() {
+        return (poemList&& poemList)
+            ? Object.keys(poemList).map((poem) => (<div>{poem.title}</div>))
+            : [];
+    }
+    
+    console.log(getList());
+    
+
+
 
     return (
         <>
@@ -39,7 +49,7 @@ const PoemList = props => {
                 </div>
             )}
             <ul>
-                {/* <p>{Object.keys(poemList).map(item => (<div>{item.content}</div>))}</p> */}
+                {/* <p>{Object.keys(poemList).forEach(poem => (<div>{poem.content}</div>))}</p> */}
                 {/* {!hasPoem && (
                     <li className="poem-list">
                         <div className="no-poem">
@@ -52,7 +62,7 @@ const PoemList = props => {
                         </div>
                     </li>
                 )} */}
-                {/* {poemList.map((poem) => (
+                {/* {poemList?.map((poem) => (
                     <li key={poem.id}>
                         <Link to={`/poems/${poem.id}`}>
                             <h2 className="poem-title">{poem.title}</h2>

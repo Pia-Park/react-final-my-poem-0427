@@ -5,14 +5,15 @@ import * as action from '../action/action'
 
 
 const mapStateToProps = state => {
-    const { poemList} = state.rootReducer 
+    const { poemList } = state.rootReducer 
     if(!poemList){
         return {
-            ...state.rootReducer
+            ...state.loadReducer 
         }
     }
     return {
-        ...state.rootReducer
+        ...state.loadReducer,
+        poemList: poemList
 
     }
 }

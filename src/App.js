@@ -70,7 +70,7 @@ class App extends React.Component {
         </header>
         <div className="memo-container">
           <Switch>
-            <Redirect exact from="/" to="/memos" />
+            <Redirect exact from="/" to="/poems" />
  
             <Route
               exact path="/poems"
@@ -85,13 +85,13 @@ class App extends React.Component {
             />
  
             <Route
-              exact path="/memos/:memoId"
+              exact path="/poems/:poemId"
               render={routerProps => {
-                const memoId = routerProps.match.params.memoId;
-                const targetMemo = memoList.find(memo => memo.id === memoId);
+                const poemId = routerProps.match.params.poemId;
+                const targetPoem = poemList.find(poem => poem.id === poemId);
  
                 return (
-                  <MemoDetail
+                  <PoemDetail
                     {...routerProps}
                   />
                 )

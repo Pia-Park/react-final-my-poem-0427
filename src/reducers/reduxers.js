@@ -1,4 +1,4 @@
 import { combineReducers } from 'redux'
-import rootReducer from './rootReducer'
+import loadReducer from './loadReducer'
 
-export default combineReducers({rootReducer})
+export default combineReducers({loadReducer})

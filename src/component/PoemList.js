@@ -9,9 +9,8 @@ import { setTimeForm } from '../utils/utils';
 const PoemList = props => {
     const { poemList, isSending, isDelete, onPoemDelete  } = props
     const [ getWritePoem, setWritePoem ] = useState(false)
-
     const hasPoem = poemList&&poemList.length > 0
-
+    console.log(poemList);
 
     return (
         <>
@@ -31,7 +30,7 @@ const PoemList = props => {
             {getWritePoem && <PoemWrite />}
             {(isSending || isDelete) && (
                 <div className="sending-bar">
-                    <FontAwesomeIcon icon={faSpinner} size="4px" pulse />
+                    <FontAwesomeIcon icon={faSpinner} size="4x" pulse />
 
                 </div>
             )}

@@ -21,7 +21,7 @@ const PoemWrite = props => {
         const title = poemTitle;
         const content = poemContent;
         const time = new Date().toISOString();
-        const id = '' + new Date().getTime();
+        const id = new Date().getTime();
 
         if(!title.trim() || !content.trim()){
             alert('Enter the Poem')

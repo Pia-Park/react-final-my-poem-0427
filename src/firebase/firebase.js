@@ -9,7 +9,7 @@ const firebaseConfig = {
     storageBucket: process.env.MY_APP_storageBucket,
     messagingSenderId: process.env.MY_APP_messagingSenderId,
     appId: process.env.MY_APP_appId,
-    databaseURL: "https://mypoem-7870e.firebaseio.com"
+    databaseURL: "https://mypoem-7870e-default-rtdb.firebaseio.com/"
 }
 
 firebase.initializeApp(firebaseConfig)

@@ -1,18 +1,25 @@
 import {connect} from 'react-redux';
 import App from '../App';
-import { getPoemListApi } from '../firebase/firebase';
+import { getPoemListApi, delPoemApi } from '../firebase/firebase';
 import * as action from '../action/action'
 
 
 const mapStateToProps = state => {
-    const { poemList } = state.rootReducer 
+    const { poemList } = state.loadReducer 
+
+    const props = {
+        ...state.deleteReducer,
+        ...state.sendReducer,
+        ...state.loadReducer
+    }
+
     if(!poemList){
         return {
-            ...state.loadReducer 
+            props 
         }
     }
     return {
-        ...state.loadReducer,
+        ...props,
         poemList: poemList
 
     }
@@ -21,6 +28,17 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => ({
     onPoemListLoad: () => {
         getPoemListApi(dispatch)
+    },
+    onPoemDelete: async(poemId) => {
+        try {
+            dispatch(action.deletePoemPending())
+            await delPoemApi(poemId)
+            dispatch(action.deletePoemSuccess())
+        } catch (error) {
+            alert('Delete is failure. Try again please.')
+            dispatch(action.deletePoemFailure())
+            
+        }
     }
 
 })

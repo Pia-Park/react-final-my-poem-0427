@@ -7,10 +7,11 @@ import { setTimeForm } from '../utils/utils';
 
 
 const PoemList = props => {
-    const { poemList } = props
+    const { poemList, isSending, isDelete, onPoemDelete  } = props
     const [ getWritePoem, setWritePoem ] = useState(false)
 
-    const poem = poemList&&poemList.length > 0
+    const hasPoem = poemList&&poemList.length > 0
+
 
     return (
         <>
@@ -28,8 +29,14 @@ const PoemList = props => {
                 
             </div>
             {getWritePoem && <PoemWrite />}
+            {(isSending || isDelete) && (
+                <div className="sending-bar">
+                    <FontAwesomeIcon icon={faSpinner} size="4px" pulse />
+
+                </div>
+            )}
             <ul>
-                {!hasMemo && (
+                {!hasPoem && (
                     <li className="poem-list">
                         <div className="no=memo">
                             <h2 className="title">
@@ -41,7 +48,7 @@ const PoemList = props => {
                         </div>
                     </li>
                 )}
-                {hasMemo && poemList.map(poem => (
+                {hasPoem && poemList.map(poem => (
                     <li key={poem.id}>
                         <Link to={`/poems/${poem.id}`}>
                             <h2 className="poem-title">{poem.title}</h2>
@@ -53,6 +60,7 @@ const PoemList = props => {
                         <button
                             type="button"
                             className="btn-delete"
+                            onClick={() => onPoemDelete(poem.id)}
                         >
                             <FontAwesomeIcon icon={faTimes} />
                             <span className="delete-text">delete</span>

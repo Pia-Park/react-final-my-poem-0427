@@ -6,7 +6,7 @@ const initState = {
     poemList: null
 }
 
-const rootReducer = (state = initState, action) => {
+const loadReducer = (state = initState, action) => {
     switch (action.type) {
         case GET_POEM_LIST_SUCCESS:
             return{
@@ -28,3 +28,5 @@ const rootReducer = (state = initState, action) => {
             }
     }
 }
+
+export default loadReducer

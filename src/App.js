@@ -5,19 +5,22 @@ import { Link } from 'react-router-dom';
 import { faFish } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PoemList from './component/PoemList';
+import PoemDetail from './component/PoemDetail'
 
 
 
 
 class App extends React.Component {
   componentDidMount() {
-    this.props.onMemoListLoad();
+    this.props.onPoemListLoad();
   }
  
   render() {
     const {
       isLoading,
       isError,
+      isSending,
+      onPoemDelete,
       poemList
     } = this.props;
  
@@ -79,7 +82,7 @@ class App extends React.Component {
                   {...routerProps}
                   poemList={poemList}
                   isSending={isSending}
-                  onMemoDelete={onMemoDelete}
+                  onPoemDelete={onPoemDelete}
                 />
               )}
             />

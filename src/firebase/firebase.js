@@ -3,14 +3,13 @@ import 'firebase/database'
 import { getPoemListSuccess, getPoemListFailure } from '../action/action'
 
 const firebaseConfig = {
-
     apiKey: process.env.MY_APP_apiKey,
     authDomain: process.env.MY_APP_authDomain,
     projectId: process.env.MY_APP_projectId,
     storageBucket: process.env.MY_APP_storageBucket,
     messagingSenderId: process.env.MY_APP_messagingSenderId,
-    appId: process.env.MY_APP_appId
-
+    appId: process.env.MY_APP_appId,
+    databaseURL: "https://mypoem-7870e.firebaseio.com"
 }
 
 firebase.initializeApp(firebaseConfig)
@@ -25,3 +24,26 @@ export const getPoemListApi = (dispatch) => {
     })
 }
 
+
+export const sendPoemApi = newPoem => {
+    const {
+        id,
+        title,
+        content,
+        createdAt
+    } = newPoem
+
+    return new Promise((resolve, reject) => {
+        database.ref('poems/' + id).set({
+            title,
+            content,
+            created_at: createdAt
+        }).then(() => resolve()).catch(() => reject())
+    })
+}
+
+export const delPoemApi = poemId => {
+    return new Promise((resolve, reject) => {
+        database.ref('poems/' + poemId).set(null).then(() => resolve()).catch(() => reject())
+    })
+}

@@ -15,12 +15,34 @@ const PoemList = props => {
     // })
     // console.log(currentList);
 
+    // function getList() {
+    //     return (poemList&& poemList)
+    //         ? Object.keys(poemList).map((poem) => (<div>{poem.title}</div>))
+    //         : [];
+    // }
+
+    // function getList() {
+    //     return (poemList&& poemList)
+    //         ? Object.keys(poemList).map(function(id, index) {
+    //             return (
+    //                 <>
+    //                 <div>{poemList[id].title}</div>
+    //                 <div>{poemList[id].content}</div>
+    //                 </>
+    //             )
+    //         })
+    //         : [];
+    // }
+
     function getList() {
         return (poemList&& poemList)
-            ? Object.keys(poemList).map((poem) => (<div>{poem.title}</div>))
+            ? Object.keys(poemList).map(function(id, index) {
+                return poemList[id].title
+            })
             : [];
     }
-    
+
+   
     console.log(getList());
     
 
@@ -49,6 +71,7 @@ const PoemList = props => {
                 </div>
             )}
             <ul>
+                <p>{getList()}</p>
                 {/* <p>{Object.keys(poemList).forEach(poem => (<div>{poem.content}</div>))}</p> */}
                 {/* {!hasPoem && (
                     <li className="poem-list">

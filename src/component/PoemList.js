@@ -42,6 +42,8 @@ const PoemList = props => {
             : [];
     }
 
+  
+
    
     console.log(getList());
     
@@ -67,7 +69,6 @@ const PoemList = props => {
             {(isSending || isDelete) && (
                 <div className="sending-bar">
                     <FontAwesomeIcon icon={faSpinner} size="4x" pulse />
-
                 </div>
             )}
             <ul>

@@ -11,7 +11,7 @@ import './App.scss';
 
 function App() {
 
-  console.log(firebase.firestore());
+  // firebase.firestore().collection('poems').add({title:"dddd"});
 
 
   return (

@@ -40,14 +40,14 @@ const InputSection = () => {
     <div className="InputSection__container">
       <input
         type="text"
-        placeholder="Note title"
+        placeholder="Poem title"
         value={title}
         onChange={e => 
           dispatch(inputActions.setInputTitle(e.target.value))
         }
       />
       <textarea
-        placeholder="Note content"
+        placeholder="Poem content"
         value={content}
         onChange={e => 
           dispatch(inputActions.setInputContent(e.target.value))
@@ -59,14 +59,14 @@ const InputSection = () => {
         <button
           onClick={id === -1 ? addNote : updateNote}
         >
-          {id === -1 ? "ADD NOTE" : "UPDATE NOTE"}
+          {id === -1 ? "ADD POEM" : "UPDATE POEM"}
         </button>      
         {id !== -1 &&
           <button
             onClick={deleteNote}
-            style={{ marginLeft: '1em', backgroundColor: 'red' }}
+            style={{ marginLeft: '1em', backgroundColor: '#BF0050' }}
           >
-            DELETE NOTE
+            DELETE POEM
           </button>
         }
       </div>

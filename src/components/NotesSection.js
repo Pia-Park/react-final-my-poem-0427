@@ -17,7 +17,7 @@ const NotesSection = () => {
   if(notes.length === 0) {
     return (
       <div className="NotesSection__container__empty">
-        <p>There is no note yet. Please add one.</p>
+        <p>There is no Poem yet. Please add one.</p>
       </div>  
     )
   }

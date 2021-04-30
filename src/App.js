@@ -4,10 +4,16 @@ import store from './redux/createStore';
 import InputSection from './components/InputSection';
 import NotesSection from './components/NotesSection';
 
+import firebase from './firebase/firebase'
+
 import './App.scss';
 // import './bg.jpg';
 
 function App() {
+
+  console.log(firebase.firestore());
+
+
   return (
     <Provider store={store}>
       <div className="container">

@@ -1,10 +1,17 @@
-import React from 'react';
+import React, {Component} from 'react';
+import firebase from 'firebase'
 import { useDispatch, useSelector } from 'react-redux';
 import noteActions from '../redux/actioins/noteActions';
 import inputActions from '../redux/actioins/inputActions';
+
+import database from '../firebase/firebase'
+
 import './InputSection.styles.scss';
 
+
+
 const InputSection = () => {
+
   const id = useSelector(state => state.inputs.id);
   const title = useSelector(state => state.inputs.title);
   const content = useSelector(state => state.inputs.content);
@@ -19,8 +26,6 @@ const InputSection = () => {
       dispatch(inputActions.resetInputs())
     }
   }
-
-  
 
   const updateNote = () => {
     if(title && content) {

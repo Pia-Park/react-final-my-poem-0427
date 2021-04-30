@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import NoteItem from './Noteitem';
 import inputActions from '../redux/actioins/inputActions';
-import './NotesSection.style.scss';
+import './NotesSection.styles.scss';
 
 const NotesSection = () => {
   const dispatch = useDispatch();

@@ -1,23 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './containers/App';
-import { Provider } from 'react-redux';
+// import './index.css';
+import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { applyMiddleware, createStore } from 'redux';
-import logger from 'redux-logger';
-import { HashRouter as Router} from 'react-router-dom'
-import rootReducer from './reducers/rootReducer'
-
-const store = createStore(rootReducer, applyMiddleware(logger))
-
 
 ReactDOM.render(
-    <Provider store={store}>
-      <Router>
-        <App />
-      </Router>
-    </Provider>,
+  <App />, 
   document.getElementById('root')
 );
 

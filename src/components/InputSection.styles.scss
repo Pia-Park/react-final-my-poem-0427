@@ -6,15 +6,35 @@
   
     input, textarea {
       min-width: 400px;
+      border-bottom: solid 1px black;
       border-top: solid 0px gray;
       border-left: solid 0px gray;
       border-right: solid 0px gray;
-    //   border-radius: 0.3em;
       padding: 0.5em;    
       margin: 0.5em;
       font-size: 10pt;
+      background-color: rgba($color: #000000, $alpha: 0);
     }  
-  
+    
+    input::placeholder{
+        color: black;
+        letter-spacing: 0.1rem;
+    }
+
+    textarea::placeholder{
+        color: black;
+        letter-spacing: 0.1rem;
+
+    }
+
+    input:focus{
+        outline: none;
+    }
+
+    textarea:focus{
+        outline: none;
+    }
+
     .InputSection__container__btnWrapper {
       display: flex;
       flex-direction: row;

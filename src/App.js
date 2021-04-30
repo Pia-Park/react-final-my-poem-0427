@@ -5,6 +5,7 @@ import InputSection from './components/InputSection';
 import NotesSection from './components/NotesSection';
 
 import './App.scss';
+// import './bg.jpg';
 
 function App() {
   return (

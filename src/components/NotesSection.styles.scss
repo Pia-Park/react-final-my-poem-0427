@@ -1,7 +1,10 @@
 .NotesSection__container {
-    columns: 1 200px;
-    column-gap: 2em;
-    padding: 2em;
+    // columns: 1 200px;
+    // column-gap: 2em;
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
   
 .NotesSection__container__empty {
